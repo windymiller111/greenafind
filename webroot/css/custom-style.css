@@ -1,0 +1,430 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+.image-frame {
+    width: 100%;
+    position: relative;
+}
+.image-frame img {
+    max-width: 100%;
+}
+
+/*** Header Frame ***/
+.header-frame .top-head-frame {
+    background: #199e23;
+    color: #fff;
+}
+.header-frame .top-head-frame a {
+    color: #fff;
+}
+.top-head-frame .social-icons-col {
+    padding-top: 10px;
+}
+.top-head-frame .social-icons-col .icon {
+    margin-right: 8px;
+    display: inline-block;
+    font-size: 14px;
+}
+.top-head-frame .social-icons-col .icon:hover {
+    color: #000;
+    transform: scale(1.4);
+}
+
+.top-head-frame .social-icons-col .icon .fab {
+    font-size: 14px;
+}
+.top-head-frame .contact-details-col {
+    text-align: right;
+}
+.contact-details-col .contact-list {
+    padding-left: 0;
+}
+.contact-details-col .contact-list li {
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 13px;
+    margin-left: 25px;
+}
+.contact-details-col .contact-list li .phone-col {
+    font-weight: 300;
+    margin-bottom: 0;
+}
+.contact-list li .phone-col i {
+    transform: rotate(90deg)
+}
+.contact-details-col .contact-list li i {
+    margin-right: 5px;
+    font-size: 14px;
+}
+.contact-details-col .contact-list li a:hover {
+    color: #F8F7C9;
+}
+
+/** head Main **/
+.logo-col {
+    width: 30%; 
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.logo-col a {
+    width: 110px;
+    height: 85px;
+    display: block;
+    background: url(../img/sprite.png) no-repeat -17px 0;
+}
+.right-side {
+    width: 69%;
+    display: inline-block;
+    text-align: right
+}
+/*adon*/
+.right-side .btn-become-partner {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px 20px;
+    -webkit-border-radius: 20px 20px;
+    -moz-border-radius: 20px 20px;
+    background-color: #ffffff;
+    border: 1px solid #199e23;
+    font-size: 12px;
+    color: #4a4949;
+    font-weight: 500;
+    line-height: 2.2;
+    margin-right: -7px;
+    transition: 0.6s ease-in-out;
+}
+.right-side .btn-become-partner:hover {
+    background: #199e23;
+    color: #fff;
+}
+
+/***** Banner Section *****/
+.banner-section {
+    height: 700px;
+    background: url(../img/banner_1.jpg) no-repeat;
+    background-size: cover;
+}
+.banner-section .banner-content-row {
+    padding-top: 80px;
+}
+.banner-section .banner-content-row .text-col {
+    margin-top: 160px;
+}
+.text-col .title-text {
+    font-size: 48px;
+    line-height: 60px;
+    color: #199e23;
+    font-weight: 700;
+}
+.text-col .sub-content {
+    font-size: 22px;
+    line-height: 1.8;
+    color: #000000;
+    font-weight: 600;
+    margin-top: 20px;
+	font-family: "Arial Narrow", Arial, sans-serif;
+}
+.image-col .image-block {
+    width: 283px;
+    height: 550px;
+    background: url('../img/mobile_banner.png') no-repeat;
+}
+
+/***** Content Section *****/
+.content-section {
+    padding: 40px 0;
+}
+.content-section .content-title {
+    font-size: 48px;
+    line-height: 60px;
+    color: #199e23;
+    text-align: center;
+    font-weight: 700;
+}
+.content-section .grid-row {
+    padding-top: 40px;
+
+}
+.content-section .grid-box {
+    margin-bottom: 30px;
+}
+/*adon*/
+.content-section .grid-box .box {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 20px 20px;
+    height: 240px;
+    overflow-y: auto;
+}
+.content-section .grid-box .title {
+    font-size: 25px;
+    line-height: 1.9;
+    color: #199e23;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.content-section .grid-box .box article {
+    padding: 5px 0;
+}
+/*adon*/
+.content-section .grid-box .box .para {
+    font-size: 17px;
+	font-style: italic;
+	font-family: "Arial Narrow", Arial, sans-serif;
+    line-height: 22px;
+    color: #777777;
+    /*font-family: "Open Sans";*/
+    font-weight: 400;
+    text-align: center;
+}
+
+/***** App Store Section *****/
+.app-store-section {
+    background: #EDEDED url(../img/dis_1.png) no-repeat 0 0;
+    background-size: 170px;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+}
+.app-store-section .grid-row {
+    padding: 50px 0 30px;
+}
+.grid-row .grid-content-box {
+    padding-top: 70px;
+}
+.grid-row .grid-content-box .title-text {
+    font-size: 40px;
+    line-height: 60px;
+    color: #199e23;
+    font-weight: 700;
+}
+.grid-row .grid-content-box .para {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #777777;
+    /*font-family: "Open Sans";*/
+	font-family: "Arial Narrow", Arial, sans-serif;
+    font-weight: 400;
+}
+.grid-row .grid-content-box .store-btn-frame .title-text {
+    font-size: 30px;
+    line-height: 60px;
+    color: #000000;
+    font-family: "Open Sans";
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.store-btn-frame .btn-row .btn-google-play {
+    width: 167px;
+    height: 58px;
+    margin-right: 15px;
+    background: url(../img/sprite.png) no-repeat -20px -119px;
+}
+.store-btn-frame .btn-row .btn-ios-store {
+    width: 167px;
+    height: 58px;
+    margin-right: 15px;
+    background: url(../img/sprite.png) no-repeat -20px -190px;
+}
+
+/***** App Store Section *****/
+.owner-app-store-section {
+    position: relative;
+    background: url(../img/left_leaf.png) no-repeat left bottom;
+}
+.owner-app-store-section::before {
+    content: '';
+    display: block;
+    width: 181px;
+    height: 175px;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: url(../img/right_leaf.png) no-repeat right top;
+    z-index: -1;
+}
+.owner-app-store-section::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: url(../img/dis_2.png) no-repeat right top;
+    background-size: 200px 200px;
+    z-index: -1;
+}
+.owner-app-store-section .grid-row {
+	padding-bottom: 30px;
+}
+
+/******* Footer Element ********/
+.footer-section {
+    background: #EFEFEF;
+}
+.footer-links-frame {
+    padding: 20px 0;
+}
+/** Newsletter **/
+.footer-links-frame .newsletter-col {
+    padding-top: 15px;
+    padding-bottom: 15px;
+} 
+.newsletter-col .content-frame .title-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+}
+.newsletter-col .content-frame .para {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #000;
+    line-height: 1.7;
+}
+.content-frame .newsletter-form .form-frame {
+    background: #fff;
+    height: 52px;
+    position: relative;
+}
+.newsletter-form .form-frame .form-control {
+    width: calc(100% - 56px);
+    height: 52px;
+    border: 0 none;
+    display: inline-block;
+}
+.newsletter-form .form-frame .btn-submit {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #5DB443;
+    border: 0 none;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.icon-arrow-chevron {
+
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 4px;
+
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+/** quick-links-col **/
+.quick-links-col .links-list {
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.quick-links-col .links-list li {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 10px;
+}
+.quick-links-col .links-list li a {
+    color: #000;
+}
+.links-list li .title-text {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/** .social-links-col  **/
+.social-links-col .links-list {
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.social-links-col ul li .icon {
+    font-size: 48px;
+    margin-right: 7px;
+}
+.social-links-col ul li .icon:hover {
+    transform: scale(1.6);
+}
+.social-links-col ul li .icon-twitter {
+    color: #50ABF1;
+}
+.social-links-col ul li .icon-linkedin {
+    color: #0085B0;
+}
+.social-links-col ul li .icon-fb {
+    color: #3A549F;
+}
+
+/**** btm-footer ****/
+.btm-footer {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #c9c9c9;
+}
+.btm-footer .logo-col {
+    width: inherit;
+}
+.btm-footer .copyright-col {
+    text-align: right;
+    margin-top: 30px;
+}
+.btm-footer .copyright-col .text {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+
+/***** Modal Box *******/
+.becomePartnerModal .modal-content {
+    padding: 15px 20px;
+}
+.becomePartnerModal .modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+.contact-form .form-col {
+    margin-bottom: 20px;
+}
+.contact-form .form-col .form-control {
+    height: 48px;
+    border-radius: 0 0;
+    border: 0 none;
+    box-shadow: none;
+    background: #ECECEC;
+}
+.contact-form .form-col textarea.form-control {
+    height: 120px;
+}
+.becomePartnerModal .modal-footer {
+    border: 0 none;
+    padding-top: 0;
+}
+.becomePartnerModal .modal-footer .btn-submit {
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    background: #199D23;
+
+    border-radius: 0 0;
+    border: 0 none;
+}
+iframe {
+    max-width: 100%;
+}

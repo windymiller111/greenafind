@@ -1,0 +1,76 @@
+.hidden{
+	display: none;
+}
+
+.pagination {
+    border-radius: 4px;
+    display: inline-block;
+    margin: 20px 0;
+    padding-left: 0;
+}
+.pagination > li {
+    display: inline;
+}
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    margin-left: 0;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    background-color: #eee;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #428bca;
+    border-color: #428bca;
+    color: #fff;
+    cursor: default;
+    z-index: 2;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.message.success{
+    color: green;
+}
+.message.error, .error-message, .error{
+    color: red;
+}
+/*.main-sidebar{width: 230px !important;}*/
+/*.content-wrapper, .main-footer, .main-header{margin-left: 230px !important;}*/
+.content-wrapper>.content .table{font-size: 14px;}
+.content-wrapper>.content .table td a.btn{font-size:14px;}
+.content-wrapper>.content .table td , .content-wrapper>.content .table th{padding: 8px;}
+img{
+    max-width: 100%;
+}
+/*search bar Css*/ 
+/*#library_categories_wrapper.form-inline{display: unset !important;}
+    div.dataTables_filter{float: right;margin-right: 12px;margin-top: 8px;}*/
+.sidebar .nav-sidebar .nav-item>.nav-link{font-size: 14px;}
+
+.main-sidebar .sidebar-mini .navbar-light .navbar-nav .nav-link{color: #ffffff;}
+/*.main-sidebar .brand-link {background-color: #367fa9;}*/
+/*.sidebar-mini .main-header{background: #3c8dbc !important;}*/
+.card-body div.dataTables_wrapper div.dataTables_filter label{padding-right: 6px;}
+div#library_categories_wrapper{padding-top: 14px;}
+
+.cancelSuccessMsg{text-align: center; margin-bottom: 50px; font-weight: 500; font-size: 30px;}
+.cancelSuccSection{display: flex;justify-content: center;align-items: center;height: 53vh;}

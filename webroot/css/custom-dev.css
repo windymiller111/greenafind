@@ -1,0 +1,54 @@
+.default-mandatory{
+    font-weight: 600;
+    background: #236690;
+    color: #fff;
+    padding: 6px;
+    cursor:default;
+}
+/*    a.default-mandatory:hover{
+          color: none;
+    }*/
+.mandatory{
+    font-weight: 600;
+    background: #236690;
+    color: #fff;
+    padding: 6px;
+}
+.optional{
+    font-weight: 600;
+    background: #67942a;
+    color: #fff;
+    padding: 6px;
+}
+.off{
+    font-weight: 600;
+    background: #ba474a;
+    color: #fff;
+    padding: 6px;
+}
+.delete_question{
+    color:red;
+}
+.custom-hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+.btn-padT{
+    margin-top:35px;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.box-body .form-group input[type='checkbox'] {
+    margin-right: 5px;
+    top: 5px;
+    position: relative;
+}
