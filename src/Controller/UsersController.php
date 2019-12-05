@@ -11,12 +11,16 @@ use Cake\I18n\Time;
 use Cake\Auth\DefaultPasswordHasher;
 class UsersController extends AppController
 {
-	public function initialize()
+	public $UserPayments;
+    public $orders;
+  public function initialize()
     {
     	parent::initialize();
         $this->Auth->allow(['login', 'getAjax', 'chkemailexist', 'chkphoneexist', 'getNewsLetter']); 
         $this->loadComponent('RequestHandler');
 		$this->loadComponent('CommonMail');
+		$this->UserPayments = TableRegistry::get('UserPayments');
+        $this->orders = TableRegistry::get('Orders');
 	}
     
     /**
@@ -417,4 +421,75 @@ class UsersController extends AppController
           $replacements = array('!', '*', "'", "(", ")", ";", ":", "@", "&", "=", "+", "$", ",", "/", "?", "%", "#", "[", "]");
           return str_replace($entities, $replacements, urlencode($string));
         }
+		
+		/**
+     * restautant Payment Method
+     *
+     * @access public
+     */
+      public function restaurantPayment(){
+        //echo 'check'; die;
+        $condition = ['Users.id !=' => 1, 'Users.user_type !=' => 2];
+        $paymentData = $this->Users->find()->select(['Users.id', 'UserProfiles.user_id', 'UserProfiles.restaurant_name', 'RestaurantPayments.id', 'RestaurantPayments.restaurant_id', 'RestaurantPayments.device_type', 'RestaurantPayments.amount', 'RestaurantPayments.transaction_id', 'RestaurantPayments.created'])
+      ->join([
+          'restaurantpayments' => [
+          'table' => 'restaurant_payments',
+          'type' => 'LEFT',
+          'conditions' => ['RestaurantPayments.restaurant_id = Users.id'],
+          'alias' => 'RestaurantPayments'
+          ],
+          'userprofiles' => [
+          'table' => 'user_profiles',
+          'type' => 'INNER',
+          'conditions' => ['UserProfiles.user_id = RestaurantPayments.restaurant_id'],
+          'alias' => 'UserProfiles'
+          ],
+        ])
+      ->where($condition)
+      ->order(['RestaurantPayments.id' => 'DESC']);
+      //echo '<pre>'; print_r($paymentData); die;
+      $this->paginate = ['limit' => 10];
+      $paymentData = $this->paginate($paymentData);
+      $this->set(compact('paymentData'));
+    }
+	
+	/**
+     * user order List Method
+     *
+     * @access public
+     */
+      public function orderList(){
+        $this->viewBuilder()->setLayout('ajax');
+        if ($this->request->is(array('ajax', 'post'))) {
+             $postData = $this->request->getData();
+             $order_id = $postData['order_id'];
+             //query orders data
+             $Orderdata = $this->orders->find()->contain(['Carts' => ['CartItems' => ['MenuItems']]
+              ])->where(['Orders.id' => $order_id])->order(['Orders.id' => 'DESC'])->first()->toArray();
+             $this->set(compact('Orderdata'));
+           }
+         }
+		 
+		 /**
+     * user payment List Method
+     *
+     * @access public
+     */
+      public function paymentList(){
+        $paymentData = $this->UserPayments->find()->select(['UserPayments.id', 'UserPayments.user_id', 'UserPayments.rest_id', 'UserPayments.transaction_id', 'UserPayments.order_id', 'UserPayments.total_amount', 'UserPayments.device_type', 'UserPayments.created', 'Users.username', 'UserProfiles.user_id', 'UserProfiles.restaurant_name'])
+        ->contain(['Users'])
+        ->join([
+          'userprofiles' => [
+          'table' => 'user_profiles',
+          'type' => 'INNER',
+          'conditions' => ['UserProfiles.user_id = UserPayments.rest_id'],
+          'alias' => 'UserProfiles'
+          ],
+        ])
+        ->
+        order(['UserPayments.id' => 'DESC']);
+        $this->paginate = ['limit' => 10];
+        $paymentData = $this->paginate($paymentData);
+        $this->set(compact('paymentData'));
+		}
     }

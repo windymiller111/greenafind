@@ -20,6 +20,21 @@
             </li>        
           </ul>
         </li>
+		
+		<!-- payments tab -->
+         <li class="nav-item has-treeview <?= (!empty($action) && ($action=='paymentList' || $action=='restaurantPayment' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=="" || $action=='' || $action=='')) ? 'menu-open' : '' ?> ">
+
+        <?php echo $this->Html->link('<i class="fa fa-arrows nav-icon"></i><p> Payments <i class="fa fa-angle-left right"></i></p>', '#', ['escape' => false, 'class' => (!empty($action) && ($action=="paymentList" || $action=='restaurantPayment' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=='' || $action=="" || $action=='' || $action=='')) ? "nav-link active" : "nav-link inactive"]) ?>
+        
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <?= $this->Html->link('<i class="fa fa-circle-o nav-icon"></i><p> User Payment List </p>', ['controller' => 'Users', 'action' => 'paymentList'], ['escape' => false, 'class' => (!empty($action) && ($action=="" || $action=="" || $action=='')) ? "nav-link active" : "nav-link inactive"]) ?>
+            </li>
+            <li class="nav-item">
+              <?= $this->Html->link('<i class="fa fa-circle-o nav-icon"></i><p> Restaurant Payment List </p>', ['controller' => 'Users', 'action' => 'restaurantPayment'], ['escape' => false, 'class' => (!empty($action) && ($action=="" || $action=="" || $action=='')) ? "nav-link active" : "nav-link inactive"]) ?>
+            </li>        
+          </ul>
+		  
         <li class="nav-item">
         <?= $this->Html->link('<i class="nav-icon fa fa-circle-o"></i><p class="text">Change Password</p>', ['controller' => 'users', 'action' => 'changePassword'], ['escape' => false, 'class' => 'nav-link']);?>
         </li>

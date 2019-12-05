@@ -272,4 +272,21 @@ function getSubChildCategories(){
                 $(".times"+itemKey).attr("readonly", true); 
             }
         });
+		
+		//order data with using modal
+        $('.view_data').click(function(){
+			//alert('dddd');
+            var order_Url = orderUrl;
+            var order_id = $(this).attr("id");
+           $.ajax({  
+                url:order_Url, 
+                method:"post",  
+                data:{order_id:order_id},  
+                success:function(data){
+                //console.log(data);  
+                     $('#employee_detail').html(data);  
+                     $('#dataModal').modal("show");  
+                }  
+           });  
+      });
 });

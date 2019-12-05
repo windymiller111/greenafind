@@ -61,6 +61,7 @@ class OrdersController extends AppController
 					'user_phone_number' => $orderVal['user']['user_profile']['phone_number'],
 					'order_date' => $orderVal['order_date'],
 					'total_amount' => $orderVal['amount'],
+					'order_number' => $orderVal['order_number'],
 					'currencyCode' => $this->checkCurrency($restname['user_profile']['currency']),
 					'total_items' => count($orderVal['cart']['cart_items'])
                     );
@@ -368,7 +369,7 @@ class OrdersController extends AppController
 					if($this->Orders->save($orderdata)){
                         $order_id = $orderdata->id;
                         //user payment function to save user payment
-                        $this->userSavePayment($user_id, $rest_id, $order_id, $payment_data['response']['id'], $payment_data['response']['intent'], $total_amount, $payment_data['client']['platform']);
+                        $this->userSavePayment($user_id, $rest_id, $order_id, $payment_data['response']['id'], $payment_data['response']['intent'], $total_amount, $payment_data['client']['platform'], $order_number);
                     }
                   if(!empty($deviceToken)){
                         $message = "Someone Placed Order";
@@ -381,7 +382,7 @@ class OrdersController extends AppController
             }else{return $this->_returnJson(false, 'Invalid Request.');}
         }
 		//userpayment function
-        public function userSavePayment($user_id = null, $rest_id = null, $order_id = null, $transaction_id = null, $transaction_type = null, $total_amount = null, $device_type = null){
+        public function userSavePayment($user_id = null, $rest_id = null, $order_id = null, $transaction_id = null, $transaction_type = null, $total_amount = null, $device_type = null, $order_number = null){
             //records inside array
             $newData = [];
             $newData['user_id'] = $user_id;
@@ -414,7 +415,7 @@ class OrdersController extends AppController
                     }
 
                     if(!empty($deviceToken)){
-                        $message = "Your order has been placed";
+                         $message = "Your order has been placed. Your order id is: ". 'OID'.$order_number.$user_id;
                         //function to save notification component
                         $this->Notification->saveNotification($rest_id, $user_id, $order_id, 'Order Placed', $message);
                         //function to sent pushnotification
@@ -428,7 +429,7 @@ class OrdersController extends AppController
      * @param type $length
      * @return object
      */
-	 protected function getNextJobNumber($length = 10) {
+	 protected function getNextJobNumber($length = 5) {
             $number = '1234567890';
             $numberLength = strlen($number);
             $randomNumber = '';
